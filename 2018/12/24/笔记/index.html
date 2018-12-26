@@ -9,13 +9,14 @@
     <meta name="keywords" content="sjy-xiaosong">
   
   <meta name="description" content="hexo + github搭建个人博客 node环境配置linux操作系统1.浏览器打开 http://nodejs.org,下载10.14.2版本2.默认下载到/root/下载  路径下，解压；1#tar -xf node-v10.14.2-linux-x64.tar 3.创建node和npm的软链接（为了能够全局使用node/npm命令）12#ln -s /root/下载/node-v10.1">
+<meta name="keywords" content="hexo,github,域名">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记">
-<meta property="og:url" content="http://yoursite.com/2018/12/24/笔记/index.html">
+<meta property="og:url" content="http://localhost:4000/2018/12/24/笔记/index.html">
 <meta property="og:site_name" content="SJY">
 <meta property="og:description" content="hexo + github搭建个人博客 node环境配置linux操作系统1.浏览器打开 http://nodejs.org,下载10.14.2版本2.默认下载到/root/下载  路径下，解压；1#tar -xf node-v10.14.2-linux-x64.tar 3.创建node和npm的软链接（为了能够全局使用node/npm命令）12#ln -s /root/下载/node-v10.1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-25T08:18:35.927Z">
+<meta property="og:updated_time" content="2018-12-26T07:10:28.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记">
 <meta name="twitter:description" content="hexo + github搭建个人博客 node环境配置linux操作系统1.浏览器打开 http://nodejs.org,下载10.14.2版本2.默认下载到/root/下载  路径下，解压；1#tar -xf node-v10.14.2-linux-x64.tar 3.创建node和npm的软链接（为了能够全局使用node/npm命令）12#ln -s /root/下载/node-v10.1">
@@ -91,7 +92,7 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a title="我的主页" target="_blank" href="//xxx.com">
+                        <a title="我的主页" target="_blank" href="//localhost:4000">
                             <i class="fa fa-home fa-2x"></i></a>
                     
                         <a title="Github" target="_blank" href="//github.com/sjy428034591">
@@ -117,6 +118,15 @@
     </h1>
     <div class="post-title-bar">
       <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/笔记/">笔记</a>
+                  
+                      <a href="/categories/教程/">教程</a>
+                  
+              </li>
           
         <li>
           <i class="fa fa-calendar"></i>  2018-12-24
@@ -146,15 +156,42 @@
 <h2 id="进入blog目录"><a href="#进入blog目录" class="headerlink" title="进入blog目录"></a>进入blog目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cd blog</span></span><br></pre></td></tr></table></figure>
 <p>##安装项目依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm install</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="启动项目服务"><a href="#启动项目服务" class="headerlink" title="启动项目服务"></a>启动项目服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hexo s</span></span><br></pre></td></tr></table></figure>
-<h2 id="预览项目"><a href="#预览项目" class="headerlink" title="预览项目"></a>预览项目</h2><p>   git pull    将本地与服务器同步   拉下来<br>   git push    将本地文件推送上去刷新<br>在浏览器地址栏输入： <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>  回车访问</p>
+<h2 id="预览项目"><a href="#预览项目" class="headerlink" title="预览项目"></a>预览项目</h2><p>   git pull    将本地与服务器同步   拉下来<br>   git push    将本地文件推送上去刷新<br>在浏览器地址栏输入： <a href="http://localhost:4000">http://localhost:4000</a>  回车访问</p>
+<h1 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h1><h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>主机记录</th>
+<th>记录值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNAME</td>
+<td>www</td>
+<td>用户名.github.io</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>192.30.252.153</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>192.30.252.154</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创建CNAME"><a href="#创建CNAME" class="headerlink" title="创建CNAME"></a>创建CNAME</h2><p>在blog/source路径下新建一个叫CNAME的文件(不带后缀)<br>在文件内填写自己的域名, 如:baidu.com</p>
 <h1 id="回家之后"><a href="#回家之后" class="headerlink" title="回家之后"></a>回家之后</h1><p>1.安装node<br>2.安装hexo 脚手架<br>3.安装git<br>打开 <a href="http://git-scm.com" target="_blank" rel="noopener">http://git-scm.com</a> 下载git安装包并安装<br>4.初始化项目<br>  在桌面空白区域鼠标选择“git bash here”<br>5.进入blog<br>  cd blog<br>6.安装依赖<br>  npm install<br>7.启动服务<br>  hexo s<br>8.预览<br>9.切换主题<br>  在blog所在路径：<br>  git clone <a href="https://github.com/WongMinHo/hexo-theme-miho.git" target="_blank" rel="noopener">https://github.com/WongMinHo/hexo-theme-miho.git</a> themes/miho<br>找到blog目录的_config.yml.修改thene:miho<br>10.换图<br>网站图标： blog/themes/miho/source<br>其他图： blog/themes/miho/source/images</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年12月25日 16:18</p>
-        <p>原始链接： <a class="post-url" href="/2018/12/24/笔记/" title="笔记">http://yoursite.com/2018/12/24/笔记/</a></p>
+        <p>最后更新： 2018年12月26日 15:10</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/24/笔记/" title="笔记">http://localhost:4000/2018/12/24/笔记/</a></p>
         <footer>
-            <a href="http://yoursite.com">
+            <a href="http://localhost:4000">
                 <img src="/images/logo.png" alt="宋建渝">
                 宋建渝
             </a>
@@ -173,7 +210,7 @@
     <a class="close" href="javascript:;" id="reward-close">×</a>
     <span class="reward-title">
         <i class="icon icon-quote-left"></i>
-        请我吃糖~
+        请我吃鸡~
         <i class="icon icon-quote-right"></i>
     </span>
     <div class="reward-content">
@@ -209,7 +246,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/12/24/笔记/&title=《笔记》 — SJY&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2018/12/24/笔记/&title=《笔记》 — SJY&pic=/images/blog.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -219,22 +256,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/12/24/笔记/&title=《笔记》 — SJY&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2018/12/24/笔记/&title=《笔记》 — SJY&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/12/24/笔记/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018/12/24/笔记/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记》 — SJY&url=http://yoursite.com/2018/12/24/笔记/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记》 — SJY&url=http://localhost:4000/2018/12/24/笔记/&via=http://localhost:4000" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/12/24/笔记/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2018/12/24/笔记/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -244,7 +281,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/12/24/笔记/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2018/12/24/笔记/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -253,6 +290,17 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/hexo/" class="color5">hexo</a>
+      
+    <a href="/tags/github/" class="color2">github</a>
+      
+    <a href="/tags/域名/" class="color3">域名</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -262,7 +310,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#node环境配置"><span class="post-toc-text">node环境配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#linux操作系统"><span class="post-toc-text">linux操作系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#windows环境下："><span class="post-toc-text">windows环境下：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目搭建"><span class="post-toc-text">项目搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初始化博客项目"><span class="post-toc-text">初始化博客项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进入blog目录"><span class="post-toc-text">进入blog目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动项目服务"><span class="post-toc-text">启动项目服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预览项目"><span class="post-toc-text">预览项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#回家之后"><span class="post-toc-text">回家之后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#node环境配置"><span class="post-toc-text">node环境配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#linux操作系统"><span class="post-toc-text">linux操作系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#windows环境下："><span class="post-toc-text">windows环境下：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目搭建"><span class="post-toc-text">项目搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初始化博客项目"><span class="post-toc-text">初始化博客项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进入blog目录"><span class="post-toc-text">进入blog目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动项目服务"><span class="post-toc-text">启动项目服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预览项目"><span class="post-toc-text">预览项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#域名绑定"><span class="post-toc-text">域名绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名解析"><span class="post-toc-text">域名解析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建CNAME"><span class="post-toc-text">创建CNAME</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#回家之后"><span class="post-toc-text">回家之后</span></a></li></ol>
         </nav>
     </aside>
     
@@ -329,8 +377,8 @@
 
 
       <p>
-        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
-        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+        Powered by  <a href="http://songjianyu.cn/" target="_blank">songjianyu</a>
+
       &copy; 2018 宋建渝<br>
       </p>
     </div>
@@ -340,7 +388,7 @@
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
   var mihoConfig = {
-      root: "http://yoursite.com",
+      root: "http://localhost:4000",
       animate: true,
       isHome: false,
       share: true,
@@ -364,10 +412,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/笔记/">笔记</a><a class="category-link" href="/categories/笔记/教程/">教程</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/字体/" style="font-size: 10px;">字体</a> <a href="/tags/标题/" style="font-size: 10px;">标题</a> <a href="/tags/超链接/" style="font-size: 10px;">超链接</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -400,7 +448,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/字体/" style="font-size: 10px;">字体</a> <a href="/tags/标题/" style="font-size: 10px;">标题</a> <a href="/tags/超链接/" style="font-size: 10px;">超链接</a>
         </div>
     </div>
 </div>
